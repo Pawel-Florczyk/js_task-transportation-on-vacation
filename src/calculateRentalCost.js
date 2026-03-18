@@ -4,14 +4,19 @@
  * @return {number}
  */
 function calculateRentalCost(days) {
-  const cost = days * 40;
+  const costPerDay = days * 40;
+  const bigSale = 50;
+  const sale = 20;
+  const shortTerm = 3;
+  const longTerm = 7;
+  const cost = costPerDay;
 
-  if (days >= 7) {
-    return cost - 50;
+  if (days >= longTerm) {
+    return cost - bigSale;
   }
 
-  if (days >= 3) {
-    return cost - 20;
+  if (days >= shortTerm) {
+    return cost - sale;
   }
 
   return cost;
